@@ -36,4 +36,9 @@ const books = [
   },
 ];
 
-module.exports = books;
+const accounts = [{
+  username: "mahboi123",
+  password: "password123"
+}]
+
+module.exports = { books, accounts };
