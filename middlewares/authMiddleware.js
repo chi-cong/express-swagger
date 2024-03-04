@@ -3,12 +3,12 @@ const { decryptToken } = require("../util/tokenHandler")
 module.exports = (req, res, next) => {
   const authToken = req.headers.bearer
   if (!authToken) {
-    return res.sendStatus(401)
+    return res.status(401).json({ message: "unauthorized request" })
   }
   const data = decryptToken(authToken)
   const user = data.userId;
   if (!user) {
-    return res.sendStatus(401)
+    return res.status(401).json({ message: "user not founded" })
   }
   next()
 }

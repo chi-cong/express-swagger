@@ -132,10 +132,10 @@
 
 const express = require("express");
 const router = express.Router();
+const authMiddleware = require("../middlewares/authMiddleware")
 
 const { books } = require("../util/data");
-
-router.get("/", function (req, res) {
+router.get("/", [authMiddleware], function (req, res) {
   res.status(200).json(books);
 });
 

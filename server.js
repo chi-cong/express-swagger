@@ -38,6 +38,7 @@ app.use(
 app.use(bodyParser.json());
 
 app.use("/books", require("./routes/books"));
+app.use("/account", require("./routes/accounts"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);

@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken")
 const { worldSuperInternationalSecretKey } = require("../projectSetting")
 
-const generateToken = (data, aliveMins = 120, secretKey = worldSuperInternationalSecretKey, algo = "RS256") => {
-  const expDate = Math.floor(date.now() / 1000) + aliveMins * 60
+const generateToken = (data, aliveMins = 120, secretKey = worldSuperInternationalSecretKey, algo = "HS256") => {
+  const expDate = Math.floor(Date.now() / 1000) + aliveMins * 60
   const payload = {
     ...data,
     exp: expDate

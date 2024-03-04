@@ -4,4 +4,4 @@ const getUserByName = (username) => {
   return accounts.find((e) => e.username === username)
 }
 
-module.export = { getUserByName }
+module.exports = { getUserByName }
