@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     return res.status(401).json({ message: "unauthorized request" })
   }
   const data = decryptToken(authToken)
-  const user = data.userId;
+  const user = data.id;
   if (!user) {
     return res.status(401).json({ message: "user not founded" })
   }
